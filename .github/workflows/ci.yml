@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Pytest Unit Tests
         run: |
-          pytest -v
+          python -m pytest -v
 
       - name: Validate Docker Build (No Push)
         run: |
