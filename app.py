@@ -9,14 +9,15 @@ def get_version():
             return f.read().strip()
     return "1.0.0"
 
+
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({
         "status": "healthy",
         "application": "student-ml-api",
-        "version": get_version()
+        "application_version": get_version(),
+        "model_version": "model-1"
     }), 200
-
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json(silent=True)
